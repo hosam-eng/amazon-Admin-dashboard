@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33712.159
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmazonAdminDashboardMVC", "AmazonAdminDashboardMVC\AmazonAdminDashboardMVC.csproj", "{4584B0BE-F302-41BD-BD20-8F093C8B39D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmazonAdmin.Domain", "AmazonAdmin.Domain\AmazonAdmin.Domain.csproj", "{C3FCCD38-AC9C-47D9-AD75-028511983F53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmazonAdmin.Application", "AmazonAdmin.Application\AmazonAdmin.Application.csproj", "{05E7B839-49CB-49DE-8BE8-1F0EFDC6AE33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmazonAdmin.DTO", "AmazonAdmin.DTO\AmazonAdmin.DTO.csproj", "{C8320225-57F5-4046-A21C-E5CF762AC3C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmazonAdmin.Infrastrucure", "AmazonAdmin.Infrastrucure\AmazonAdmin.Infrastrucure.csproj", "{F73B1780-8C9A-4DF3-975E-5213F3744C5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmazonAdmin.Context", "AmazonAdmin.Context\AmazonAdmin.Context.csproj", "{4679F6D0-0049-44E8-B3AA-8E7D75E83A52}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4584B0BE-F302-41BD-BD20-8F093C8B39D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4584B0BE-F302-41BD-BD20-8F093C8B39D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4584B0BE-F302-41BD-BD20-8F093C8B39D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4584B0BE-F302-41BD-BD20-8F093C8B39D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3FCCD38-AC9C-47D9-AD75-028511983F53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3FCCD38-AC9C-47D9-AD75-028511983F53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3FCCD38-AC9C-47D9-AD75-028511983F53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3FCCD38-AC9C-47D9-AD75-028511983F53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05E7B839-49CB-49DE-8BE8-1F0EFDC6AE33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05E7B839-49CB-49DE-8BE8-1F0EFDC6AE33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05E7B839-49CB-49DE-8BE8-1F0EFDC6AE33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05E7B839-49CB-49DE-8BE8-1F0EFDC6AE33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8320225-57F5-4046-A21C-E5CF762AC3C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8320225-57F5-4046-A21C-E5CF762AC3C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8320225-57F5-4046-A21C-E5CF762AC3C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8320225-57F5-4046-A21C-E5CF762AC3C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F73B1780-8C9A-4DF3-975E-5213F3744C5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F73B1780-8C9A-4DF3-975E-5213F3744C5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F73B1780-8C9A-4DF3-975E-5213F3744C5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F73B1780-8C9A-4DF3-975E-5213F3744C5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4679F6D0-0049-44E8-B3AA-8E7D75E83A52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4679F6D0-0049-44E8-B3AA-8E7D75E83A52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4679F6D0-0049-44E8-B3AA-8E7D75E83A52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4679F6D0-0049-44E8-B3AA-8E7D75E83A52}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9DA6A669-34E6-4A2D-8C4E-72F9258D8233}
+	EndGlobalSection
+EndGlobal

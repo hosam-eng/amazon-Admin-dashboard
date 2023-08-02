@@ -1,0 +1,34 @@
+﻿@model List<OrderDTO>
+@{
+   // ViewData["Title"] = "Index";
+    Layout = "_Layout";
+}
+<div class="mx-3">
+    <table class="table table-striped table-bordered text-center">
+        <thead>
+            <tr>
+                <th scope="col">Order Id</th>
+                <th scope="col">User Name</th>
+                <th scope="col">Order Date</th>
+                <th scope="col">Arrival Date</th>
+                <th scope="col">Status</th>
+                <th scope="col">Order Items</th>
+                <th scope="col">Update Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="col">@item.Id</th>
+                    <th scope="col">@item.UserName</th>
+                    <th scope="col">@item.OrderDate</th>
+                    <th scope="col">@item.ArrivalDate</th>
+                    <th scope="col">@item.status.ToString()</th>
+                    <th scope="col"><a class="btn btn-info" asp-action="GetOrderItems" asp-route-id="@item.Id">OrderItems</a></th>
+                    <th scope="col"><a class="btn btn-info" asp-action="UpadatStatus" asp-route-id="@item.Id">Update Status</a></th>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

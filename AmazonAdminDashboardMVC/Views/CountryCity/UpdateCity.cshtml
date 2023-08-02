@@ -1,0 +1,37 @@
+﻿@model AmazonAdmin.DTO.CreateUpdateCity
+
+@{
+    //ViewData["Title"] = "AddCity";
+    SelectList list = new SelectList(Model.Countries, "Id", "Name");
+}
+<hr />
+<div class="row">
+    <div class="w-50 mx-auto">
+        <form asp-action="UpdateCity">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CountryId" class="control-label">Category</label>
+                <select asp-for="CountryId" class="form-control" asp-items="list"></select>
+                <span asp-validation-for="CountryId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,75 @@
+﻿@model AddUpdateProductDTO
+
+@{
+    ViewData["Title"] = "EditProduct";
+    Layout = "_Layout";
+    SelectList items = new SelectList(Model.SubCategories, "Id", "Name");
+}
+
+<hr />
+<div class="col-md-12">
+    <form asp-action="UpdateProduct" enctype="multipart/form-data">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="form-group">
+            <input hidden asp-for="Id" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Name" class="control-label"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="arabicName" class="control-label"></label>
+            <input asp-for="arabicName" class="form-control" />
+            <span asp-validation-for="arabicName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Price" class="control-label"></label>
+            <input asp-for="Price" class="form-control" />
+            <span asp-validation-for="Price" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input hidden asp-for="Status" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="UnitInStock" class="control-label"></label>
+            <input asp-for="UnitInStock" class="form-control" />
+            <span asp-validation-for="UnitInStock" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label">Upload Image</label>
+            <input name="image" class="form-control" type="file" multiple />
+        </div>
+        <div class="form-group">
+            @foreach (var item in Model.imageDTOs)
+            {
+                <img src="~/StaticFiles/@item.Name" width="100px" height="100px" />
+            }
+        </div>
+        <div class="form-group">
+            <label asp-for="Description" class="control-label"></label>
+            <textarea asp-for="Description" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="arabicDescription" class="control-label"></label>
+            <textarea asp-for="arabicDescription" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <span asp-validation-for="arabicDescription" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="CategoryId" class="control-label">Category</label>
+            <select asp-for="CategoryId" class="form-control" asp-items="items"></select>
+            <span asp-validation-for="CategoryId" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Edit" class="btn btn-success" />
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

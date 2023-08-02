@@ -1,0 +1,58 @@
+﻿<link href="~/datatables/css/datatables.bootstrap4.min.css" rel="stylesheet" />
+<link href="~/datatables/css/datatables.material.min.css" rel="stylesheet" />
+<link href="~/datatables/css/datatables.material.css" rel="stylesheet" />
+<div>
+	<a class="btn btn-primary m-3" asp-controller="Category" asp-action="Create">Create Category</a>
+</div>
+<div class="text-center mx-5">
+	<table id="categories" class="mdl-data-table table table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Arabic Name</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+	</table>
+</div>
+@section Scripts{
+	<script src="~/datatables/js/jquery.datatables.min.js"></script>
+	<script src="~/datatables/js/datatables.bootstrap4.min.js"></script>
+	<script>
+		$(document).ready(function () {
+
+			$('#categories').DataTable({
+				"serverSide": true,
+				"filter": true,
+				"paging": true,
+				"ajax": {
+					"url": "/Category/GetAllSubCategories/"+@ViewBag.id,
+					"datatype":"json",
+					"type":"POST"	
+				},
+				"columnDefs": [{
+					"targets": [0],
+					"visable": false,
+					"searchable": false
+				}],
+				"columns": [
+					{ "data": "name", "name": "Name", "autowidth": true },
+					{ "data": "arabicName", "name": "arabicName", "autowidth": true },
+					{
+						"render": function (data, type, row) {
+							return `<div class="mx-2">
+									<a class="btn btn-primary" href="/Category/Edit/${row.id}">Edit</a>
+									</div>`
+						},
+						"orderable": false
+					}
+
+				]
+
+
+			});
+			
+		});
+		
+	</script>
+}

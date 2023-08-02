@@ -1,0 +1,63 @@
+﻿<link href="~/datatables/css/datatables.bootstrap4.min.css" rel="stylesheet" />
+<link href="~/datatables/css/datatables.material.min.css" rel="stylesheet" />
+<link href="~/datatables/css/datatables.material.css" rel="stylesheet" />
+<div>
+	<a class="btn btn-primary m-3" asp-controller="Product" asp-action="AddProduct">Create Product</a>
+</div>
+<div class="text-center mx-5">
+	<table id="products" class="mdl-data-table table table-bordered" width="100%">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Arabic Name</th>
+				<th>Price</th>
+				<th>Unit On Stock</th>
+				<th>Status</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+	</table>
+</div>
+@section Scripts{
+	<script src="~/datatables/js/jquery.datatables.min.js"></script>
+	<script src="~/datatables/js/datatables.bootstrap4.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			$('#products').DataTable({
+				"serverSide": true,
+				"filter": true,
+				"paging": true,
+				"ajax": {
+					"url": "/Product/GetAll",
+					"datatype": "json",
+					"type": "POST"
+				},
+				"columnDefs": [{
+					targets: ['_all'],
+					className: 'mdc-data-table__cell'
+				}],
+				"columns": [
+					{ "data": "name", "name": "Name","width":"20%"},
+					{ "data": "arabicName", "name": "arabicName","width":"100px" },
+					{ "data": "price", "name": "Price", "autoWidth": true },
+					{ "data": "unitInStock", "name": "UnitInStock", "autoWidth": true },
+					{ "data": "status", "name": "Status", "autoWidth": true },
+
+					{
+						"render": function (data, type, row) {
+							return `<div class="mx-2">
+											<a class="btn btn-primary" href="Product/UpdateProduct/${row.id}">Edit</a>
+											<a class="btn btn-info" href="Product/DeleteProduct/${row.id}">Delete</a>
+									</div>`
+						},
+						"orderable": false
+					}
+
+				]
+
+
+			});
+
+		});
+	</script>
+}

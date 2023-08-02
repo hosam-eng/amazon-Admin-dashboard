@@ -1,0 +1,31 @@
+﻿@model List<OrderItemShow>
+@{
+    Layout = "_Layout";
+}
+<div class="w-75 mx-auto">
+    <table class="table table-striped table-bordered text-center">
+        <thead>
+            <tr>
+                <th scope="col">Order Id</th>
+                <th scope="col">ProductId</th>
+                <th scope="col">Productname</th>
+                <th scope="col">count</th>
+                <th scope="col">Price</th>
+                <th scope="col">Total price</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="col">@item.Id</th>
+                    <th scope="col">@item.ProductId</th>
+                    <th scope="col">@item.Productname</th>
+                    <th scope="col">@item.count</th>
+                    <th scope="col">@item.ProductPrice</th>
+                    <th scope="col">@item.supTotalPrice</th>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
